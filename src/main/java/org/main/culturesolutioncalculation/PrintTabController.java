@@ -50,7 +50,7 @@ public class PrintTabController {
             }
 
         } catch (NullPointerException e) {
-            System.out.println("값이 입력되지 않았습니다.");
+            System.out.println("값이 입력되지 않았습니다. No value in load module in PrintTabControlelr");
         }
     }
 

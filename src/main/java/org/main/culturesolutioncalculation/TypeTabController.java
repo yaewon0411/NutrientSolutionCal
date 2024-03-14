@@ -53,9 +53,16 @@ public class TypeTabController {
     @FXML
     public void saveType() {
         TabPane tabPane = typeTab.getTabPane();
+
+        //테스트
+        System.out.println("tabPane.toString() = " + tabPane.toString());
+
         int currentIndex = tabPane.getTabs().indexOf(typeTab);
 
         if(userInfo != null) {
+            //테스트
+            System.out.println("listView.getSelectionModel().getSelectedItem() = " + listView.getSelectionModel().getSelectedItem());
+
             userInfo.setSelectedCulture(listView.getSelectionModel().getSelectedItem());
             userInfo.setSelectedCrop(comboBox.getValue());
 

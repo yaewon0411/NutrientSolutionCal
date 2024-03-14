@@ -5,19 +5,35 @@ import javafx.fxml.FXMLLoader;
 import javafx.scene.Parent;
 import javafx.scene.Scene;
 import javafx.stage.Stage;
+import org.main.culturesolutioncalculation.service.database.DatabaseConnector;
+
+import java.sql.Connection;
+import java.sql.DriverManager;
+import java.sql.SQLException;
 
 public class Main extends Application {
+
+
+    private final String url = "jdbc:mysql://localhost:3306/CultureSolutionCalculation?useSSL=false";
+    private final String user = "root";
+    private final String password = "root";
 
     @Override
     public void start(Stage stage) {
         try {
             initStage(stage);
+            System.out.println("start program : 프로그램 실행");
+            Connection conn = DatabaseConnector.getInstance(url, user, password).getConnection();
+
+            //종료 시 DB 연결 해제
+            stage.setOnCloseRequest(e -> DatabaseConnector.disconnect(conn));
         } catch (Exception e) {
             e.printStackTrace();
         }
     }
 
-    public static void main(String[] args) {
+    public static void main(String[] args) throws ClassNotFoundException {
+
         launch();
     }
 

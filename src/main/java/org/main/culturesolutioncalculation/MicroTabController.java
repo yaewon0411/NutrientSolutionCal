@@ -23,6 +23,7 @@ import org.main.culturesolutioncalculation.model.NutrientSolution;
 import org.main.culturesolutioncalculation.service.CSVDataReader;
 
 import java.io.IOException;
+import java.nio.charset.StandardCharsets;
 import java.util.ArrayList;
 
 public class MicroTabController {
@@ -135,6 +136,13 @@ public class MicroTabController {
     }
 
     private String[] getStandardValues(String culture, String crop) {
+        //==========인코딩 안되고있음====
+        System.out.println("culture = " + culture);
+        System.out.println("culture.getBytes(StandardCharsets.UTF_8) = " + culture.getBytes(StandardCharsets.UTF_8));
+        System.out.println("crop = " + crop);
+        System.out.println("=========================");
+
+
         String[] values = new String[7];
 
         // 선택한 배양액 이름에 해당하는 NutrientSolution 객체 가져오기

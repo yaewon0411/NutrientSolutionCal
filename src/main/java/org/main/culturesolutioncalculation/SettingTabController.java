@@ -99,6 +99,14 @@ public class SettingTabController {
 
         return selectedValues;
     }
+    //원수 고려 유무 getter
+    public boolean isConsidered(){
+        Map<String, Integer> values = getSelectedValues();
+        Integer value = values.get("원수 고려 유무");
+        if(value==1) return true;
+        else return false;
+    }
+
 
     private String getSelectedStringValue(ToggleGroup group) {
         RadioButton selectedRadioButton = (RadioButton) group.getSelectedToggle();

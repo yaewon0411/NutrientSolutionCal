@@ -1,11 +1,11 @@
 package org.main.culturesolutioncalculation.service;
 
-import org.example.model.MajorAtom;
-import org.example.model.TraceAtom;
+import org.main.culturesolutioncalculation.model.MajorAtom;
 
 import java.util.Arrays;
 
 public class ElementalCompositionCalculator {
+
 
     public void calculateMajor(double[] fertilizer, int majorSetting) {
         String[] compoundName = {
@@ -61,7 +61,7 @@ public class ElementalCompositionCalculator {
         compounds[8] = new double[]{2, 0, 0, 0, 0, 1, 0};   // 질산마그네슘
         compounds[9] = new double[]{1, 0, 0, 0, 0, 0, 0};   // 질산
         compounds[10] = new double[]{0, 0, 0, 0, 0, 0, 1};  // 황산
-        compounds[11] = new double[]{0, 0, 1, 0, 0, 0, 0};  // 인사
+        compounds[11] = new double[]{0, 0, 1, 0, 0, 0, 0};  // 인산
         compounds[12] = new double[]{0, 0, 0, 1, 0, 0, 0};  // 염화칼륨
 
         if (majorSetting == 0){
